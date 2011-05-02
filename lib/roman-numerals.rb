@@ -28,4 +28,19 @@ class RomanNumerals
       result
     end
   end
+
+  def self.to_decimal(value)
+    if @base_digits.has_value? value
+      @base_digits.key value
+    else
+      result = 0
+      @base_digits.values.reverse.each do |roman|
+        while value.start_with? roman
+          value = value.slice(roman.length, value.length)
+          result += @base_digits.key roman
+        end
+      end
+      result
+    end
+  end
 end
