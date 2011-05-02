@@ -14,33 +14,26 @@ class RomanNumerals
     900  => 'CM',
     1000 => 'M'
   }
+
   def self.to_roman(value)
-    if @base_digits.keys.include? value
-      @base_digits[value]
-    else
-      result = ''
-      @base_digits.keys.reverse.each do |decimal|
-        while value >= decimal
-          value -= decimal
-          result += @base_digits[decimal]
-        end
+    result = ''
+    @base_digits.keys.reverse.each do |decimal|
+      while value >= decimal
+        value -= decimal
+        result += @base_digits[decimal]
       end
-      result
     end
+    result
   end
 
   def self.to_decimal(value)
-    if @base_digits.has_value? value
-      @base_digits.key value
-    else
-      result = 0
-      @base_digits.values.reverse.each do |roman|
-        while value.start_with? roman
-          value = value.slice(roman.length, value.length)
-          result += @base_digits.key roman
-        end
+    result = 0
+    @base_digits.values.reverse.each do |roman|
+      while value.start_with? roman
+        value = value.slice(roman.length, value.length)
+        result += @base_digits.key roman
       end
-      result
     end
+    result
   end
 end
