@@ -38,5 +38,9 @@ describe RomanNumerals do
       RomanNumerals.to_decimal('MMMMMMMMMMMMMMMMMMMMMMMCCXXXIV').should == 23234
       RomanNumerals.to_decimal('XLII').should == 42
     end
+    it "handles lower-case roman numerals" do
+      RomanNumerals.to_decimal('mmmmmmmmmmmmmmmmmmmmmmmccxxxiv').should == 23234
+      RomanNumerals.to_decimal('xlii').should == 42
+    end
   end
 end

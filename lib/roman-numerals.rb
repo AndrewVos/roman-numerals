@@ -27,6 +27,7 @@ module RomanNumerals
   end
 
   def self.to_decimal(value)
+    value.upcase!
     result = 0
     @base_digits.values.reverse.each do |roman|
       while value.start_with? roman
