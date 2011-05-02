@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{roman-numerals}
-  s.version = "0.0.1"
+  s.version = ""
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andrew Vos"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "lib/roman-numerals.rb",
+    "roman-numerals.gemspec",
     "spec/helper.rb",
     "spec/roman-numerals_spec.rb"
   ]
