@@ -28,6 +28,7 @@ Jeweler::RubygemsDotOrgTasks.new
 require 'rspec/core/rake_task'
 desc "Run specs"
 RSpec::Core::RakeTask.new do |t|
+  t.rspec_opts = ['--colour']
 end
 
 task :default => :spec
