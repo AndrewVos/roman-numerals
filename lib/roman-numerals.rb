@@ -1,4 +1,4 @@
-class RomanNumerals
+module RomanNumerals
   @base_digits = {
     1    => 'I',
     4    => 'IV',
