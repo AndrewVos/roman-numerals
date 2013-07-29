@@ -46,4 +46,12 @@ describe RomanNumerals do
       RomanNumerals.to_decimal('xlii').should == 42
     end
   end
+  describe ".roman" do  
+    it "handles lower-case roman numerals" do
+      RomanNumerals.roman('i').should be_true
+      RomanNumerals.roman('IV').should be_true
+      RomanNumerals.roman('iiii').should be_false
+      RomanNumerals.roman('IVIV').should be_false
+    end	  
+  end
 end
