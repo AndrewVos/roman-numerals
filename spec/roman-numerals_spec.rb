@@ -1,4 +1,7 @@
-require 'helper'
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+# require 'rspec'
+require 'roman-numerals'
 
 describe RomanNumerals do
   base_digits = {
