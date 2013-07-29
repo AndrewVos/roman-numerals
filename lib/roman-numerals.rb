@@ -26,8 +26,13 @@ module RomanNumerals
     result
   end
 
+  def self.valid_roman? (value)
+    !(value.scan(/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/).empty?)
+  end
+  
   def self.to_decimal(value)
     value.upcase!
+    return "Invalid Roman. Breaking Rule" unless self.valid_roman?(value)
     result = 0
     @base_digits.values.reverse.each do |roman|
       while value.start_with? roman

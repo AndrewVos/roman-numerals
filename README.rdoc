@@ -10,10 +10,14 @@ In order to convert a number to a roman numeral, call the to_roman method:
 
 === Converting to a decimal
 In order to convert to a decimal from a roman numeral, call the to_decimal method
-    RomanNumerals.to_decimal('I')
+    RomanNumerals.to_decimal('I')         # => 1
+    RomanNumerals.to_decimal('IIII')      # => Invalid Roman. Breaking Rule
 
-
-
+=== Checking if roman is valid
+In order to check if a given value is a valid roman, call the valid_roman method
+    RomanNumerals.valid_roman?('I')       # => true
+    RomanNumerals.valid_roman?('IVIV')    # => false
+    RomanNumerals.valid_roman?('IIII')    # => false
 
 == Contributing to roman-numerals
  
