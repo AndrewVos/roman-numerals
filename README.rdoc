@@ -1,6 +1,19 @@
 = roman-numerals
 
-Description goes here.
+== Usage
+In order to use the roman numerals gem, you need to add "roman-numerals" to your Gemfile
+    gem 'roman-numerals'
+
+=== Converting to a roman numeral
+In order to convert a number to a roman numeral, call the to_roman method:
+    RomanNumerals.to_roman(1)
+
+=== Converting to a decimal
+In order to convert to a decimal from a roman numeral, call the to_decimal method
+    RomanNumerals.to_decimal('I')
+
+
+
 
 == Contributing to roman-numerals
  
