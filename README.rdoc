@@ -16,8 +16,8 @@ In order to convert to a decimal from a roman numeral, call the to_decimal metho
 === Checking if roman is valid
 In order to check if a given value is a valid roman, call the valid_roman method
     RomanNumerals.roman?('i')       # => true
-    RomanNumerals.roman('IV')       # => true
-    RomanNumerals.roman('iiii')     # => false
+    RomanNumerals.roman?('IV')       # => true
+    RomanNumerals.roman?('iiii')     # => false
     RomanNumerals.roman?('IVIV')    # => false
 
 == Contributing to roman-numerals
