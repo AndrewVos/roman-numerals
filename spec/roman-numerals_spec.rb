@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-# require 'rspec'
+require 'rspec'
 require 'roman-numerals'
 
 describe RomanNumerals do
@@ -45,13 +45,23 @@ describe RomanNumerals do
       RomanNumerals.to_decimal('mmmmmmmmmmmmmmmmmmmmmmmccxxxiv').should == 23234
       RomanNumerals.to_decimal('xlii').should == 42
     end
+    it "does not change the argument" do
+      a = 'iii'
+      RomanNumerals.to_decimal(a)
+      a.should == 'iii'
+      
+      b = 23234
+      RomanNumerals.to_roman(b)
+      b.should == 23234 
+      
+    end
   end
   describe ".roman" do  
     it "handles lower-case roman numerals" do
-      RomanNumerals.roman('i').should be_true
-      RomanNumerals.roman('IV').should be_true
-      RomanNumerals.roman('iiii').should be_false
-      RomanNumerals.roman('IVIV').should be_false
+      RomanNumerals.roman?('i').should be_true
+      RomanNumerals.roman?('IV').should be_true
+      RomanNumerals.roman?('iiii').should be_false
+      RomanNumerals.roman?('IVIV').should be_false
     end	  
   end
 end
