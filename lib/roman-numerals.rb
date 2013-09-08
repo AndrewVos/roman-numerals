@@ -26,11 +26,6 @@ module RomanNumerals
     result
   end
 
-  def self.roman? value
-    value = value.upcase
-    !(value.scan(/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/).empty?)
-  end
-
   def self.to_decimal value
     value = value.upcase
     result = 0
