@@ -15,7 +15,7 @@ module RomanNumerals
     1000 => 'M'
   }
 
-  def self.to_roman(value)
+  def self.to_roman value
     result = ''
     @base_digits.keys.reverse.each do |decimal|
       while value >= decimal
@@ -26,14 +26,14 @@ module RomanNumerals
     result
   end
 
-  def self.roman? (value)
-    value.upcase!  
+  def self.roman? value
+    value = value.upcase
     !(value.scan(/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/).empty?)
   end
-  
-  def self.to_decimal(value)
-    value.upcase!
+
+  def self.to_decimal value
     raise ArgumentError, 'value should be a valid roman' unless self.roman?(value)
+    value = value.upcase
     result = 0
     @base_digits.values.reverse.each do |roman|
       while value.start_with? roman
