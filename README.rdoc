@@ -13,13 +13,6 @@ In order to convert to a decimal from a roman numeral, call the to_decimal metho
     RomanNumerals.to_decimal('I')
     RomanNumerals.to_decimal('IIII')      # => ArgumentError
 
-=== Checking if roman is valid
-In order to check if a given value is a valid roman, call the valid_roman method
-    RomanNumerals.roman?('i')       # => true
-    RomanNumerals.roman('IV')       # => true
-    RomanNumerals.roman('iiii')     # => false
-    RomanNumerals.roman?('IVIV')    # => false
-
 == Contributing to roman-numerals
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
@@ -34,4 +27,3 @@ In order to check if a given value is a valid roman, call the valid_roman method
 
 Copyright (c) 2011 Andrew Vos. See LICENSE.txt for
 further details.
-
