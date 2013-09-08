@@ -32,7 +32,6 @@ module RomanNumerals
   end
 
   def self.to_decimal value
-    raise ArgumentError, 'value should be a valid roman' unless self.roman?(value)
     value = value.upcase
     result = 0
     @base_digits.values.reverse.each do |roman|
